@@ -1,0 +1,21 @@
+{:deps     {:aliases [:dev]}
+ :dev-http {8000 "classpath:public"}
+ :builds   {:main       {:target           :browser
+                         :compiler-options {:infer-externs :auto}
+                         :output-dir       "resources/public/js/main"
+                         :asset-path       "/js/main"
+                         :modules          {:main {:init-fn foli.client/init
+                                                   :entries [foli.client]}}
+                         :devtools         {:after-load foli.client/refresh
+                                            :preloads   [com.fulcrologic.fulcro.inspect.preload]}}
+            :workspaces {:target          :browser
+                         :compiler-options {:infer-externs :auto}
+                         :output-dir      "resources/public/js/workspaces"
+                         :asset-path      "/js/workspaces"
+                         :devtools        {;:preloads   [fulcro.inspect.preload ] ; include for Fulcro Inspect support
+                                           :after-load nubank.workspaces.core/after-load
+                                           :http-root          "resources/public"
+                                           :http-port          8023
+                                           :http-resource-root "."
+                                           :preloads           []}
+                         :modules         {:main {:entries [foli.main]}}}}}
