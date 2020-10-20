@@ -1,0 +1,16 @@
+{:csv-headers "trip_id,stop_id,arrival_time,departure_time,stop_sequence,pickup_type,shape_dist_traveled"
+ :csv-sample  "0generatedBlock,1586,04:40:00,04:40:00,0,,0.0"
+ :up          ["CREATE TABLE stop_times (
+                  id serial,
+                  trip_id varchar(255),
+                  stop_id varchar(255),
+                  arrival_time char(9),
+                  departure_time char(9),
+                  stop_sequence varchar(255),
+                  pickup_type varchar(255),
+                  shape_dist_traveled varchar(255),
+                  CONSTRAINT fk_stop_times_trip FOREIGN KEY(trip_id) REFERENCES trips(trip_id),
+                  CONSTRAINT fk_stop_times_stops FOREIGN KEY(stop_id) REFERENCES stops(stop_id)
+               )"
+               "COMMENT ON COLUMN stop_times.pickup_type IS 'Indicates pickup method. Valid options are:\n\n0 or empty - Regularly scheduled pickup.\n1 - No pickup available.\n2 - Must phone agency to arrange pickup.\n3 - Must coordinate with driver to arrange pickup.'"]
+ :down        ["DROP TABLE stop_times"]}

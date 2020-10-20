@@ -1,0 +1,10 @@
+{:csv-headers "service_id,date,exception_type"
+ :csv-sample "Arki,0,0,0,0,0,0,0,20200921,2021042"
+ :up          ["CREATE TABLE calendar_dates (
+                  id serial,
+                  service_id varchar(255),
+                  date char(8),
+                  exception_type varchar(255),
+                  CONSTRAINT fk_calendar_dates_calendar FOREIGN KEY(service_id) REFERENCES calendar(service_id)
+                )"]
+ :down        ["DROP TABLE calendar_dates"]}

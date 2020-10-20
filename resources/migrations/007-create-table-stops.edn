@@ -1,0 +1,14 @@
+{:csv-headers "stop_id,stop_name,stop_lat,stop_lon,stop_code,zone_id,stop_timezone,platform_code"
+ :csv-sample  "1,Turun satama (Silja),60.434972,22.219658,1,FÖLI,Europe/Helsinki,"
+ :up          ["CREATE TABLE stops (
+                  id serial,
+                  stop_id varchar(255) primary key,
+                  stop_name varchar(255),
+                  stop_lat varchar(255),
+                  stop_lon varchar(255),
+                  stop_code varchar(255),
+                  zone_id varchar(255),
+                  stop_timezone varchar(50),
+                  platform_code varchar(255)
+               )"]
+ :down        ["DROP TABLE stops"]}

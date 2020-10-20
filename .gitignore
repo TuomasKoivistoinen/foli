@@ -7,3 +7,4 @@ node_modules
 target
 foli.iml
 .nrepl-port
+gtfs/*.txt

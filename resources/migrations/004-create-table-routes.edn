@@ -1,0 +1,13 @@
+{:csv-headers "agency_id,route_id,route_short_name,route_long_name,route_type,route_color,route_text_color"
+ :csv-sample  "1,1,1,Lentoasema-Satama,3,eaab00,000000"
+ :up          ["CREATE TABLE routes (
+                  id serial,
+                  agency_id varchar(255),
+                  route_id varchar(255) primary key,
+                  route_short_name varchar(255),
+                  route_long_name varchar(255),
+                  route_type varchar(255),
+                  route_color char(6),
+                  route_text_color char(6)
+               )"]
+ :down        ["DROP TABLE routes"]}

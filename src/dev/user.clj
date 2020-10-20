@@ -1,7 +1,10 @@
 (ns user
   (:require
     [foli.server :as server]
-    [clojure.tools.namespace.repl :as tools-ns :refer [set-refresh-dirs refresh]]))
+    [clojure.tools.namespace.repl :as tools-ns :refer [set-refresh-dirs refresh]]
+    [clojure.java.io :as io]
+    [next.jdbc :as jdbc]
+    [next.jdbc.prepare :as prepare]))
 
 ;; Ensure we only refresh the source we care about. This is important
 ;; because `resources` is on our classpath and we don't want to
@@ -21,7 +24,4 @@
 
 ;; These are here so we can run them from the editor with kb shortcuts.  See IntelliJ's "Send Top Form To REPL" in
 ;; keymap settings.
-(comment
-  (start)
-  (restart)
-  (+ 1 1))
+(def stops (atom {}))

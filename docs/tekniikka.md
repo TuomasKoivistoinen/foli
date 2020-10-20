@@ -337,7 +337,7 @@ resolvaukseen tarvittavaa dataa.
 Osa tyyppien hyödyistä voi saada spec avulla.
 
 En ehkä ole paras selittämään EQL tarjoamaa potentiaalia suhteessa GQL, mutta itse ainakin olin vaikuttunut nähdessäni
-[Wilkerin talkin](https://www.youtube.com/watch?v=yyVKf2U8YVg&t=444s).
+[Wilkerin talkin](https://www.youtube.com/watch?v=yyVKf2U8YVg).
 
 ### Lopputulos
 
@@ -362,3 +362,5 @@ Pathom EQL + Fulcro
 Jos olisi varmuus oman kannan tarpeesta muunakin kuin ETL tiedon välivarastona, niin lähtisin hakemaan vipuvoimaa
 PostGraphile kautta. Tässä tapauksessa (pääosin sen takia kun sytyin Wilkerin puheista uudelelen) lähtisin treenaamaan
 EQL + Fulcro.
+
+Jälkikäteen ajateltuna EQL + re-frame olisi ollut mielenkiintoinen kokeilu tähän projektiin.

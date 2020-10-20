@@ -10,7 +10,7 @@
 (def ^:private not-found-handler
   (fn [req]
     {:status  200
-     :headers {"Content-Type" "text/html"
+     :headers {"Content-Type"                "text/html"
                "Access-Control-Allow-Origin" "*"}
      :body    "not found.."}))
 
@@ -33,7 +33,7 @@
 (defn all-routes-to-index [handler]
   (fn [{:keys [uri] :as req}]
     (if (or
-          (= "/datomic/api" uri)
+          (= "/api" uri)
           (string/ends-with? uri ".css")
           (string/ends-with? uri ".map")
           (string/ends-with? uri ".jpg")
@@ -46,19 +46,11 @@
       (handler req)
       (handler (assoc req :uri "/index.html")))))
 
-(defn wrap-api [handler uri]
-  (fn [request]
-    (println (:transit-params request))
-    (if (= uri (:uri request))
-      (server/handle-api-request
-        (:transit-params request)
-        (fn [tx]
-          (pathom-parser {:ring/request request} tx)))
-      (handler request))))
-
 (def middleware
   (-> not-found-handler
-      (wrap-api "/datomic/api")
+      (server/wrap-api {:uri    "/api"
+                        :parser (fn [query]
+                                  (pathom-parser {} query))})
       (server/wrap-transit-params)
       (server/wrap-transit-response)
       (wrap-resource "public")

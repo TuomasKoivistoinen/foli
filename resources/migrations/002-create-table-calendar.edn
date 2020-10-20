@@ -1,0 +1,16 @@
+{:csv-headers "service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date"
+ :csv-sample  "Arki,20200921,1"
+ :up          ["CREATE TABLE calendar (
+                  id serial,
+                  service_id varchar(255) primary key,
+                  monday varchar(255),
+                  tuesday varchar(255),
+                  wednesday varchar(255),
+                  thursday varchar(255),
+                  friday varchar(255),
+                  saturday varchar(255),
+                  sunday varchar(255),
+                  start_date char(8),
+                  end_date char(8)
+                )"]
+ :down        ["DROP TABLE calendar"]}

@@ -1,0 +1,1 @@
+This folder will contain gtfs data as .txt.

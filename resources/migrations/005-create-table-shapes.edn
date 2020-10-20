@@ -1,0 +1,11 @@
+{:csv-headers "shape_id,shape_pt_sequence,shape_pt_lat,shape_pt_lon,shape_dist_traveled"
+ :csv-sample  "0_1,378143,60.470950,22.324935,0.0"
+ :up          ["CREATE TABLE shapes (
+                  id serial,
+                  shape_id varchar(255),
+                  shape_pt_sequence varchar(255),
+                  shape_pt_lat varchar(255),
+                  shape_pt_lon varchar(255),
+                  shape_dist_traveled varchar(255)
+               )"]
+ :down        ["DROP TABLE shapes"]}

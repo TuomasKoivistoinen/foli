@@ -1,0 +1,12 @@
+{:csv-headers "table_name,field_name,language,translation,record_id,field_value"
+ :csv-sample  "stops,stop_name,sv,Taskulavägen,615,"
+ :up          ["CREATE TABLE translations (
+                  id serial,
+                  table_name varchar(255),
+                  field_name varchar(255),
+                  language varchar(255),
+                  translation varchar(255),
+                  record_id varchar(255),
+                  field_value varchar(255)
+               )"]
+ :down        ["DROP TABLE translations"]}

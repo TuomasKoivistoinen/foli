@@ -13,9 +13,17 @@ Ekasta versiosta tulee pienin mahdollinen, mutta listataan kaikki mikä tulee mi
     - Voiko haun tehdä myös pysäkin nimen perusteella?
         - Testataan myös nimellä hakua.
     - Mitä tietoja on saatavilla rajapinnasta?
-        - Rajapinta tarjoaa gtfs datasettejä, jotka ovat tiettyjen ajanhetkien yhtenäisiä datakokonaisuuksia.
-        - Tarkemmat tiedot [Fölin](https://data.foli.fi/doc/index) ja
+        - Tarkemmat tiedot [Fölin](https://data.foli.fi/doc/index) omasta dokumentaatiosta ja esim. GTFS tapauksessa
         [Googlen](https://developers.google.com/transit/gtfs/reference) dokumentaatiosta
+    ```
+   GTFS sisältää staattisen harvemmin muuttuvan tietosisällön pysäkeistä, linjoista sekä näiden suunnitelluista aikatauluista.
+   SIRI sisältää reaaliaikaista tietoa ajoneuvojen liikkeistä, sekä laskennallista ennakoitua tietoa toteutuvista aikatauluista.
+   ALERTS sisältää reaaliaikaisesti voimassaolevat viestit, tiedotteet ja mahdolliset linjojen peruutukset.
+   GEONJSON sisältää paikkatietoa Fölin palveluista.
+   CITYBIKE sisältää Turun Fölläri-kaupunkipyörien noutoasemien tilan.
+   Tilastotietoja pyörien käytöstä on saatavilla linkistä : https://www.avoindata.fi/data/fi/dataset/turun-seudun-kaupunkipyorat
+   ```
+
     - Acceptance criteria
         - Esimerkiksi käyttäjä valitsee pysäkkinumeron 59 (Kotimäenkatu), jonka jälkeen hän näkee linjan, kohteen ja
         lähtöajan seuraaville vuoroille.
